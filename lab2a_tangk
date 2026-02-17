@@ -1,0 +1,27 @@
+# Author: Karen Tang
+# Date: 2/13/26
+# FileName: physics_in_action_tangk.py
+# Purpose: Physics in Action
+
+import math 
+
+# gravity constant
+g = 9.81
+
+# user input
+v0 = float(input("Please give the initial velocity of projectile: "))
+theta_deg = float(input("Please give the angle in degrees: "))
+
+# convert degrees to radians AFTER input
+theta = math.radians(theta_deg)
+
+# calculations
+max_height = (v0**2 * (math.sin(theta))**2) / (2 * g)
+time_in_air = (2 * v0 * math.sin(theta)) / g
+distance = (v0**2 * math.sin(2 * theta)) / g
+
+# output
+print("\n=== Calculations! ===")
+print(f"The max height of this projectile: {max_height:.3f} m")
+print(f"How long will this be in the air: {time_in_air:.3f} s")
+print(f"How long the projectile will travel: {distance:.3f} m")

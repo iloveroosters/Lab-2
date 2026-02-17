@@ -1,0 +1,17 @@
+# Author: Karen Tang
+# Date: 2/13/26
+# FileName: gratuity_calculator_tangk.py
+# Purpose: Bill Calculator
+
+
+# User Inputs
+bill = float(input("Enter your restaurant bill $: "))
+gratuity_rate = float(input("Enter the restaurant's Gratuity rate: "))
+
+# Calculations
+tip_amount = bill * (gratuity_rate / 100)
+total = bill + tip_amount
+
+# Output
+print("Gratuity: $" + format(tip_amount, ".2f"))
+print("Total bill: $" + format(total, ".2f"))

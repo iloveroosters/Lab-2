@@ -1,0 +1,46 @@
+# Author: Karen Tang
+# Date: 2/13/26
+# FileName: bridge_stress_calculator_tangk.py
+# Purpose: Engineering Statics
+
+
+# Constants
+CAR_MASS = 1500      # kg
+G = 9.81             # m/s^2
+
+print("Hello user! We are going to calculate the stress of your bridge!")
+
+# User Inputs
+L = float(input("First, What is the length of the bridge: "))
+b = float(input("Then, What is the base of the bridge: "))
+h = float(input("Then, what is the height of the bridge: "))
+n = int(input("Now the number of cars that the bridge can hold: : "))
+
+# Stress formula:
+# σ = (3 * L * n * m * g) / (4 * b * h^2)
+
+stress = (3 * L * n * CAR_MASS * G) / (4 * b * (h ** 2))
+
+print("\n=== ✨Stress✨ ===")
+print("The stress of your bridge is:", stress, "Pa")
+
+
+# ---------------------------------------------------------
+# Part 2: Maximum cars for Guam airport underpass bridge
+# Given:
+# σ = 1,000,000 Pa
+# L = 20.4 m
+# b = 12 m
+# h = 5 m
+#
+# Rearranged formula to solve for n:
+# n = (4 * b * h^2 * σ) / (3 * L * m * g)
+
+sigma_max = 1_000_000
+L2 = 20.4
+b2 = 12
+h2 = 5
+
+n_max = (4 * b2 * (h2 ** 2) * sigma_max) / (3 * L2 * CAR_MASS * G)
+
+# Max cars ≈ 1333
