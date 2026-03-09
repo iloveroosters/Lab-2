@@ -1,0 +1,38 @@
+# Author: Karen Tang
+# Date: 2/13/26
+# FileName: calc_earth_radius_tangk.py
+# Purpose: Radius of the Earth
+
+import math
+
+REAL_RADIUS = 6378  # km
+
+print("Test case for Eratosthesenes estimations")
+
+# User Inputs
+d = float(input("First, we need the distance between two locations: "))
+theta_deg = float(input("Then we need the angle of the shadow: "))
+
+# Convert degrees to radians
+theta_rad = math.radians(theta_deg)
+
+# Calculate estimated radius
+# R = D / θ   (θ must be in radians)
+estimated_radius = d / theta_rad
+
+# Calculate error
+error = math.fabs(REAL_RADIUS - estimated_radius) / REAL_RADIUS
+
+print("\nCalculating radius of the earth...")
+print("The radius of the earth:", round(estimated_radius, 3), "km")
+print("Wow, the error is around:", round(error * 100, 3), "%!")
+    
+
+# ---------------------------------------------------------
+# Guam to Hawaii calculation
+# d ≈ 6126 km
+# θ ≈ 55.15 degrees
+#
+# theta_rad = math.radians(55.15)
+# estimated_radius ≈ 6364.06 km
+# error ≈ 0.22 %
