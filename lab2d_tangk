@@ -1,0 +1,27 @@
+# Author: Karen Tang
+# Date: 2/13/26
+# FileName: employeepay_tangk.py
+# Purpose: GrossPay with Overtime Hours
+
+
+REGULAR_HOURS = 80
+
+# User Inputs
+hourly_wage = float(input("Enter your hourly pay: "))
+total_hours = float(input("Enter the amount of hours worked: "))
+
+# Since we assume there is always overtime
+regular_hours = REGULAR_HOURS
+overtime_hours = total_hours - REGULAR_HOURS
+
+# Pay Calculations
+regular_pay = hourly_wage * regular_hours
+overtime_pay = overtime_hours * 1.5 * hourly_wage
+gross_pay = regular_pay + overtime_pay
+
+# Output
+print("\nTotal Hours Worked:", regular_hours)
+print("Overtime Hours:", overtime_hours)
+print("Regular Pay: $" + str(int(regular_pay)))
+print("Overtime Pay: $" + str(int(overtime_pay)))
+print("Gross Pay: $" + str(int(gross_pay)))
